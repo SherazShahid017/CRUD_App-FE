@@ -55,13 +55,29 @@ function getAll(){
             updateButton.className = "btn btn-primary";
             updateButton.innerText = "Update Task";
             updateButton.addEventListener("click", function(){
-                updateTask(task.id);
+
+                const title =  document.querySelector("#card-title");
+
+                const inputfield = document.createElement("INPUT");
+                inputfield.setAttribute("type", "text");
+            
+                cardBody.appendChild(inputfield)
+ 
+                const saveB = document.createElement("button");
+                saveB.innerHTML = "SAVE";
+                cardBody.appendChild(saveB);
+                saveB.addEventListener("click", function(){
+                    updateTask(task.id, inputfield);
+                })
+                title.innerText = inputfield.value;
+                
+                
             })
             cardBody.appendChild(updateButton);
 
     });    
     }).catch(error => console.log(error));
-}
+}   
 
 getAll();
 
@@ -75,26 +91,24 @@ function deleteTask(id) {
     }).catch(error => console.error(error));
 }
 
-/*
-function updateTask(id) {
-    fetch("http://localhost:8083/update/" +id, {
-        method: "PUT",
-        body: JSON.stringify ({
-            description: this.decsription.value
-        }),
-        headers: {
-            'Content-type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(json => update(){
-        input
-    }
-        
-        console.log(json))
-    .catch(error => console.error(error))
 
+function updateTask(id, input) {
+    const data = {
+            description: input.value
+        }
+        debugger;
+    fetch("http://localhost:8083/update?id=" +id, {
+        method: "PUT",
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': "application/json"
+        }
+        
+    }).then(response => { 
+        return response.json(); 
+    }).then(data => {
+        console.log(response);
+        getAll();
+    }).catch(error => console.log(error));
 }
 
-updateDuck();
-*/
