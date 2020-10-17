@@ -11,36 +11,38 @@
 </head>
 
 <body>
-    <h2>To Do List!</h2>
+    <h2>Java To Do List!</h2>
 
         <form class ="ml -3" id="mainform">
 
             <div class="form-group">
-                <label for="fieldTask">Enter Task: </label>
-                <input class="w-25 form-control" id="theTask" type="text" placeholder="Enter Your Task..." name="description"> <br>
+                <label id="title1" for="theTask">Enter Task: </label>
+                <input class="w-50 form-control" id="theTask" type="text" placeholder="Enter Your Task..." name="description">
             </div>
 
-            <button class="btn btn-primary" id="submitButton" type="submit" value="submit">Create Task</button>
+            <button class="btn btn-success" id="submitButton" type="submit" value="submit">Create Task</button>
 
         </form>
 
-        
+        <br>
 
-        <div class="ml -3" id="ongoingform">
+        <div class="col-md-5" id="ongoingform">
             <form>
                 <fieldset id="ongoingfield">
-                <legend><span class="Ongoing"></span> On-Going Tasks </legend>
+                <legend><span class="Ongoing"></span> Tasks </legend>
                 
-                <div class="card-deck m-5" id="arrangeAll"></div>
+                <div class="card-deck w-auto d-sm-block" id="arrangeAll"></div>
                 </fieldset>
             </form>
         
-        <div class="ml -3" id="ongoingform">
+        <!-- <div class="ml -3" id="completedform">
             <form>
                 <fieldset id="ongoingfield">
                 <legend><span class="Ongoing"></span> Completed Tasks </legend>
+
+                <div class="card-deck m-5" id="completedarea"></div>
                 </fieldset>
-            </form>
+            </form> -->
 
     
 

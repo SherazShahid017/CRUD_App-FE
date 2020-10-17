@@ -1,5 +1,41 @@
-/*
 body {
-    background-color: grey;
+    background-color: aliceblue;
 }
-*/
+
+h2 {
+    text-align: center;
+}
+input{
+    width: 50px !important;
+}
+a {
+    cursor: pointer;
+}
+
+#arrangeAll {
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+}
+.btn btn-danger {
+    align-items: right;
+    position: absolute;
+}
+
+label {
+    font-size: larger;
+}
+div.card {
+    width: 100% !important;
+    position: block;
+    display: block;
+    border-color: gray;
+}
+div.card-body {
+    width: 100% !important;
+    position: block;
+    display: block;
+    border-color: gray;
+}
+
+
